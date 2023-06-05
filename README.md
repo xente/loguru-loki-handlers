@@ -12,7 +12,7 @@ Handler created for Loguru that sends logs to Grafana Loki in JSON format
 ## How to use
 
 ```python
-from loki_handler import loki_handler
+from loguru_loki_handler import loki_handler
 from loguru import logger
 import os 
 

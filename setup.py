@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="loguru-loki-handler",
-    version="1.0.0",
+    version="0.1.0",
     author="Xente",
     description="Handler created for Loguru that sends logs to Grafana Loki in JSON format",
     long_description=long_description,
