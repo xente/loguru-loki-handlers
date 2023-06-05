@@ -12,7 +12,7 @@ class complex_encoder(json.JSONEncoder):
         return json.JSONEncoder.default(self, obj)
 
 
-class loguru_loki_handler:
+class loki_handler:
     def __init__(self, url, labels, labelKeys=None):
         if labelKeys is None:
             labelKeys = {}
