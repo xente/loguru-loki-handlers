@@ -49,7 +49,7 @@ class loki_handler:
             if key in self.labelKeys:
                 self.steam.addLabel(key, val)
 
-        self.steam.setValue(json.dumps(simplified))
+        self.steam.setValue(json.dumps(simplified, ensure_ascii=False))
 
         headers = {"Content-type": "application/json"}
 
@@ -76,7 +76,7 @@ class stream(object):
         self.values[0] = [str(time.time_ns()), value]
 
     def serialize(self):
-        return json.dumps(self, cls=complex_encoder)
+        return json.dumps(self, cls=complex_encoder, ensure_ascii=False)
 
 
 class loki_request:
@@ -89,4 +89,4 @@ class loki_request:
         self.streams.append(steam)
 
     def serialize(self):
-        return json.dumps(self, cls=complex_encoder)
+        return json.dumps(self, cls=complex_encoder, ensure_ascii=False)
