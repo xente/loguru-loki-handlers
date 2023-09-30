@@ -47,7 +47,7 @@ class loki_handler:
 
         for key, val in simplified.items():
             if key in self.labelKeys:
-                self.steam.addLabel(key, val)
+                self.steam.addLabel(key, str(val))
 
         self.steam.setValue(json.dumps(simplified, ensure_ascii=False))
 
