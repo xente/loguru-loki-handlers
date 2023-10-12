@@ -25,22 +25,22 @@ class loki_handler:
     def write(self, message):
         record = message.record
 
-        self.steam.addLabel("level", record["level"].name)
+        self.steam.addLabel("level", record.get("level").name)
 
         simplified = {
-            "message": record["message"],
-            "timestamp": record["time"].timestamp(),
-            "process": record["process"].id,
-            "thread": record["thread"].id,
-            "function": record["function"],
-            "module": record["module"],
-            "name": record["name"],
+            "message": record.get("message"),
+            "timestamp": record.get("time").timestamp(),
+            "process": record.get("process").id,
+            "thread": record.get("thread").id,
+            "function": record.get("function"),
+            "module": record.get("module"),
+            "name": record.get("name")
         }
 
-        for key, value in record["extra"].items():
+        for key, value in record.get("extra").items():
             simplified[key] = value
 
-        if record["level"].name == "ERROR":
+        if record.get("level").name == "ERROR":
             simplified["file"] = record.get("file").name
             simplified["path"] = record.get("file").path
             simplified["line"] = record.get("line")
