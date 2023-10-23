@@ -1,4 +1,6 @@
-# loguru-loki-handlers
+# [Deprecated] loguru-loki-handlers
+
+This repo has been deprecated please check : [loki-logger-handler](https://github.com/xente/loki-logger-handler).
 
 Handler created for Loguru that sends logs to Grafana Loki in JSON format
 
